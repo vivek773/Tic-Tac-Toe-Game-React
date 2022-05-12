@@ -11,3 +11,72 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app-header {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(15, 14, 14);
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1560677653-a263662b153b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+}
+.heading-text {
+  color: rgb(213, 228, 42);
+  font-size: 42px;
+  font-weight: bolder;
+  text-align: center;
+  margin: 50px;
+}
+.fc-aqua {
+  color: #def151;
+}
+
+.fc-white {
+  color: white;
+}
+
+.fw-600 {
+  font-weight: bolder;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.jc-center {
+  justify-content: center;
+}
+.square {
+  min-width: 100px;
+  min-height: 100px;
+  font-size: 64px;
+  text-align: center;
+  color: #f7f7fb;
+  font-weight: bolder;
+  padding: 30px;
+}
+.b-bottom-right {
+  border-right: 15px solid #1CDBF5;
+  border-bottom: 15px solid #1CDBF5;
+}
+
+.b-bottom {
+  border-bottom: 15px solid #1CDBF5;
+}
+
+.b-right {
+  border-right: 15px solid #1CDBF5;
+}
+.clear-button {
+  width: max-content;
+  margin: 40px auto 10px auto;
+}
