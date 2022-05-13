@@ -78,5 +78,14 @@ code {
 }
 .clear-button {
   width: max-content;
-  margin: 40px auto 10px auto;
+  margin: 50px auto 10px auto;
 }
+.back-button {
+  width: max-content;
+  margin: 40px auto 10px auto;
+  margin-left: 50px; 
+    margin-right: 50px;
+    padding-inline: 27px;
+    display: block;
+}
+

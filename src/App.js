@@ -1,13 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, } from 'react';
 import SquareComponent from "./SquareComponent";
 
-const initialstate = ["", "", "", "", "", "", "", "", "", ""];
+const initialstate = ["", "", "", "", "", "", "", "", ""];
+let history = [];
 
 function App() {
-    const [gameState, updateGameState] = useState(initialstate)
-    const [isXChance, updateIsXChance] = useState(false)
-
+  
+    const [gameState, updateGameState] = useState(initialstate);
+    const [isXChance, updateIsXChance] = useState(false);
+    
     const onUserClicked = (index) => {
+        history.push(index)
         let strings = Array.from(gameState);
         if (strings[index])
             return;
@@ -17,14 +20,24 @@ function App() {
     }
 
     const clearGame = () => {
-        updateGameState(initialstate)
+        updateGameState(initialstate);
     }
+
+    const back =() =>{
+        let strings = Array.from(gameState);
+        let index = history.pop();
+        strings[index] = "";
+        updateIsXChance(!isXChance)
+        updateGameState(strings)
+        
+    }
+    
     useEffect(() => {
         let winner = checkWinner();
         if (winner) {
-            clearGame();
-            alert(`Hi ! ${winner} won the Game !`)
-        }
+            clearGame(); 
+            alert(`Hi ! ${winner} won the Game !`) 
+        } 
     }, [gameState])
 
     const checkWinner = () => {
@@ -67,9 +80,11 @@ function App() {
                 <SquareComponent onClick={() => onUserClicked(8)} state={gameState[8]}/>
             </div>
             <button className="clear-button" onClick={clearGame}>Clear Game</button>
+            <button className="back-button" onClick={back}>Back</button>
             <p className="fc-aqua fw-600">Proexelancers Developer</p>
         </div>
     );
 }
 
 export default App;
+
